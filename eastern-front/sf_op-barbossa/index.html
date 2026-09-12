@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EASTERN FRONT 1941–43 · Barbarossa &amp; Stalingrad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Special+Elite&family=Cormorant+SC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=40">
+</head>
+<body data-side="GER">
+<canvas id="map"></canvas>
+
+<!-- ============ TOP BAR ============ -->
+<div id="topbar" class="hidden">
+  <div id="tb-side"><span id="tb-crest"></span><span id="tb-faction"></span></div>
+  <div id="tb-center"><div id="tb-date">—</div><div id="tb-weather">—</div></div>
+  <div id="tb-buttons"></div>
+</div>
+
+<!-- ============ BOTTOM COMMAND STRIP ============ -->
+<div id="strip" class="hidden">
+  <div id="dock" class="hidden"></div>
+  <div id="sidebox"></div>
+</div>
+
+<!-- ============ PAUSED TAG ============ -->
+<div id="paused-tag" class="hidden">⏸ PAUSED — the war waits for no one, commander</div>
+
+<!-- ============ BATTLE REPORTS (top right) ============ -->
+<div id="reports"></div>
+
+<!-- ============ INTRO ============ -->
+<div id="intro">
+  <div class="intro-inner">
+    <div class="intro-kicker">JUNE 22, 1941 — AUGUST 23, 1943</div>
+    <h1 class="intro-title">EASTERN FRONT</h1>
+    <div class="intro-sub">OPERATION BARBAROSSA &nbsp;·&nbsp; THE BATTLE OF STALINGRAD</div>
+    <p class="intro-lede">At 03:15 on June 22, 1941, 3.8 million Axis soldiers and 3,600 tanks crossed the Soviet frontier
+      on a 2,900&nbsp;km front — the largest invasion in history. By December they stood before Moscow.
+      A year later, an entire German army vanished in the ruins of Stalingrad.<br></p>
+    <div class="faction-cards">
+      <button class="faction-card ger" data-side="GER">
+        <span class="fc-head"><span class="fc-crest" data-crest="GER"></span><img class="wflag" src="assets/flag-ger.png" alt="German Reich 1933" style="width:44px;height:27px"></span>
+        <span class="fc-name">WEHRMACHT</span>
+        <span class="fc-role">Army Groups North · Centre · South</span>
+        <span class="fc-goal">Drive deep and smash everything the Red Army throws at you. Push to the Volga and the gates of Moscow before the tide turns. Beware — distance, mud and snow are your true enemies.</span>
+      </button>
+      <button class="faction-card sov" data-side="SOV">
+        <span class="fc-head"><span class="fc-crest" data-crest="SOV"></span><img class="wflag" src="assets/flag-sov.png" alt="USSR" style="width:44px;height:27px"></span>
+        <span class="fc-name">RED ARMY</span>
+        <span class="fc-role">Stavka of the Supreme Command</span>
+        <span class="fc-goal">Trade space for time. Survive the first blow, bleed him at Stalingrad, then break him at <b>Kursk</b>. Hold out until the summer of 1943 — and the tide turns for good.</span>
+      </button>
+    </div>
+    <div class="intro-actions">
+      <button id="btn-learn-intro" class="btn-ghost">📖 HISTORICAL BRIEFING</button>
+    </div>
+    <div class="intro-start">
+      <button id="btn-start" class="btn-big" disabled>CHOOSE YOUR COMMAND</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LEARN MODAL ============ -->
+<div id="learn" class="hidden">
+  <div class="learn-card">
+    <button id="learn-close" class="modal-x">✕</button>
+    <h2>HISTORICAL BRIEFING</h2>
+    <div class="learn-cols">
+      <div class="learn-col" id="learn-timeline"><h3>⏳ WHAT HAPPENED, AND WHEN</h3></div>
+      <div class="learn-col" id="learn-weapons"><h3>🔧 THE WEAPONS</h3></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ END SCREEN ============ -->
+<div id="end" class="hidden">
+  <div class="end-card">
+    <div class="end-kicker" id="end-kicker"></div>
+    <h1 id="end-title"></h1>
+    <p id="end-text"></p>
+    <div id="end-stats"></div>
+    <div class="end-history" id="end-history"></div>
+    <button id="btn-again" class="btn-big">PLAY AGAIN</button>
+  </div>
+</div>
+
+<script src="js/data.js?v=40"></script>
+<script src="js/engine.js?v=40"></script>
+<script src="js/ai.js?v=40"></script>
+<script src="js/render.js?v=40"></script>
+<script src="js/main.js?v=40"></script>
+</body>
+</html>
